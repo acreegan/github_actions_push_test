@@ -1,11 +1,13 @@
 name: Push result
+permissions:
+  contents: write
 on: workflow_dispatch
 jobs:
   report:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Create report file
+      - name: Create report file      
         run: |
           date +%s > report.txt   # Create an example file
       - name: Commit report
